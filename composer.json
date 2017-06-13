@@ -15,12 +15,23 @@
     "require": {
         "php": ">=7",
         "guzzlehttp/guzzle": "^6.1",
+        "phpunit/phpunit": "^6.3@dev"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "dev-master",
+        "orchestra/testbench": "~3.3"
     },
     "autoload": {
         "classmap": [
         ],
-        "psr-0": {
-            "Rohit\\LaravelLocalization": "src/"
+        "psr-4": {
+            "Rohit\\LinePay\\": "src/Rohit/LinePay"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rohit\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"

@@ -4,7 +4,7 @@ Very easy and light package for Line Payment.
 
 ## Installation
 ### Composer
-Add Laravel Localization to your composer.json file
+Add Line Pay to your composer.json file
 
     "rohit/line-pay": "^1.0"
 Run `composer install` to get the latest version of package

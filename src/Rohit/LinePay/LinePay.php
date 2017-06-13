@@ -41,7 +41,7 @@ class LinePay
 
         if ($code === Response::HTTP_OK) {
             $response  = $response->getBody();
-            $content  = json_decode($response);
+            $content  = json_decode($response->getContents());
         }
 
         return [
@@ -80,7 +80,7 @@ class LinePay
 
         if ($code === Response::HTTP_OK) {
             $response  = $response->getBody();
-            $content  = json_decode($response);
+            $content  = json_decode($response->getContents());
         }
 
         return [

@@ -26,16 +26,6 @@ class LinePayServiceProvider extends ServiceProvider
     }
 
     /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['modules.handler', 'modules'];
-    }
-
-    /**
      * Register the service provider.
      *
      * @return void
