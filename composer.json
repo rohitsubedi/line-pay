@@ -1,0 +1,27 @@
+{
+    "name": "rohit/line-pay",
+    "description": "Line Payment Package for Laravel",
+    "keywords": ["line pay", "payment", "php", "laravel"],
+    "homepage": "https://github.com/rohitsubedi/line-pay",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Rohit Subedi",
+            "email": "rohitsubedi@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7",
+        "guzzlehttp/guzzle": "^6.1",
+    },
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-0": {
+            "Rohit\\LaravelLocalization": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
