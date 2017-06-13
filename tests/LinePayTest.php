@@ -20,6 +20,7 @@ class LinePayTest extends TestCase
     protected $guzzleClient;
     protected $responseMock;
     protected $streamMock;
+    protected $transactionId;
 
     public function setUp()
     {
@@ -35,6 +36,8 @@ class LinePayTest extends TestCase
 
         $this->responseMock->shouldReceive('getBody')
             ->andReturn($this->streamMock);
+
+        $this->transactionId = '12345';
     }
 
     /**
@@ -45,7 +48,7 @@ class LinePayTest extends TestCase
         $this->streamMock->shouldReceive('getContents')
             ->andReturn(json_encode([
                 'info' => [
-                    'transactionId' => '12345',
+                    'transactionId' => $this->transactionId,
                     'paymentUrl' => [
                         'web' => 'paymentUrl',
                     ],
@@ -78,7 +81,7 @@ class LinePayTest extends TestCase
         $response = $this->linePay->processPayment($params);
 
         $this->assertEquals($response['status'], 'success');
-        $this->assertEquals($response['data']['transaction-id'], '12345');
+        $this->assertEquals($response['data']['transaction-id'], $this->transactionId);
     }
 
     /**
@@ -97,11 +100,9 @@ class LinePayTest extends TestCase
             'currency' => 'Currency Code eg: USD',
         ];
 
-        $transactionId = '12345';
-
         $this->guzzleClient
             ->shouldReceive('post')->once()
-            ->with(config('line-pay.detail-url') . '/' . $transactionId . '/confirm', [
+            ->with(config('line-pay.detail-url') . '/' . $this->transactionId . '/confirm', [
                 'headers' => [
                     'X-LINE-ChannelId' => config('line-pay.channel-id'),
                     'X-LINE-ChannelSecret' => config('line-pay.channel-secret'),
@@ -115,6 +116,6 @@ class LinePayTest extends TestCase
         $response = $this->linePay->verifyPayment('12345', $params);
 
         $this->assertEquals($response['status'], 'success');
-        $this->assertEquals($response['data']['transaction-id'], $transactionId);
+        $this->assertEquals($response['data']['transaction-id'], $this->transactionId);
     }
 }
