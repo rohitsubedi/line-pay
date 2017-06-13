@@ -39,10 +39,10 @@ After the above steps, you need to publish vendor for this packge. It will creat
 The file `line-pay.php` will contain the following structure
 ```php
     return [
-        'channel-id' => '',
-        'channel-secret' => '',
-        'reservation-url' => '',
-        'detail-url' => '',
+        'channel-id' => 'Line Pay Channel Id',
+        'channel-secret' => 'Line Pay Channel Secret',
+        'reservation-url' => 'https://sandbox-api-pay.line.me/v1/payments/request',
+        'detail-url' => 'https://sandbox-api-pay.line.me/v1/payments',
     ];
 ```
 ### Functions
