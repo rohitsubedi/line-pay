@@ -4,7 +4,7 @@
     "keywords": ["line pay", "payment", "php", "laravel"],
     "homepage": "https://github.com/rohitsubedi/line-pay",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Rohit Subedi",
