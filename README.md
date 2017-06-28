@@ -90,7 +90,7 @@ The file `line-pay.php` will contain the following structure
         'info' => [
             'transactionId' => 'Transaction Id eg: 12345678',
             'paymentUrl' => [
-                'web' => 'Payment url for web. (Need to redirect to this for payment),
+                'web' => 'Payment url for web.' (Need to redirect to this for payment),
                 'app' => 'Payment url for app',
             ],
             'paymentAccessToken' => 'Access Token for Payment'
