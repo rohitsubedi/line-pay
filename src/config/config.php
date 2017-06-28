@@ -5,4 +5,5 @@ return [
     'channel-secret' => 'Line Pay Channel Secret',
     'reservation-url' => 'https://sandbox-api-pay.line.me/v1/payments/request',
     'detail-url' => 'https://sandbox-api-pay.line.me/v1/payments',
+    'capture-url' => 'https://sandbox-api-pay.line.me/v1/payments/authorizations',
 ];
