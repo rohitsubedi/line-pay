@@ -6,7 +6,7 @@ Very easy and light package for Line Payment.
 ### Composer
 Add Line Pay to your composer.json file
 
-    "rohit/line-pay": "^2.0"
+    "rohit/line-pay": "^3.0"
 Run `composer install` to get the latest version of package
 
 Or you can directly run the `composer require` command
