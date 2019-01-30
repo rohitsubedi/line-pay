@@ -1,7 +1,7 @@
 <?php
 namespace Rohit\Tests;
 
-use Illuminate\Contracts\Validation\Factory as Validator;
+use Illuminate\Validation\Factory as Validator;
 use Orchestra\Testbench\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;

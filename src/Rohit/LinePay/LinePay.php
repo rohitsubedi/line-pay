@@ -2,7 +2,7 @@
 
 namespace Rohit\LinePay;
 
-use Illuminate\Contracts\Validation\Factory as Validator;
+use Illuminate\Validation\Factory as Validator;
 use GuzzleHttp\Client;
 use Illuminate\Http\Response;
 

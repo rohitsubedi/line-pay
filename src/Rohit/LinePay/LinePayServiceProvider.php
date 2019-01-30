@@ -3,6 +3,7 @@
 namespace Rohit\LinePay;
 
 use Illuminate\Support\ServiceProvider;
+use GuzzleHttp\Client;
 
 class LinePayServiceProvider extends ServiceProvider
 {
@@ -38,8 +39,10 @@ class LinePayServiceProvider extends ServiceProvider
             $packageConfigFile, 'line-pay'
         );
 
-        $this->app['line-pay'] = $this->app->share(function () {
-            return new LinePay();
+        $this->app->singleton(LinePay::class, function () {
+            return new LinePay(new Client, $this->app->make('validator'));
         });
+
+        $this->app->alias(LinePay::class, 'line-pay');
     }
 }
