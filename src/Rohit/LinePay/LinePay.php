@@ -101,8 +101,8 @@ class LinePay
 
         $response = $this->client->post(config('line-pay.detail-url') . '/' . $transactionId . '/confirm', [
             'headers' => [
-                'X-LINE-ChannelId' => config('linepay.channel-id'),
-                'X-LINE-ChannelSecret' => config('linepay.channel-secret'),
+                'X-LINE-ChannelId' => config('line-pay.channel-id'),
+                'X-LINE-ChannelSecret' => config('line-pay.channel-secret'),
                 'Content-Type' => 'application/json; charset=UTF-8',
             ],
             'body' => json_encode($params),
@@ -151,8 +151,8 @@ class LinePay
 
         $response = $this->client->post(config('line-pay.capture-url') . '/' . $transactionId . '/capture', [
             'headers' => [
-                'X-LINE-ChannelId' => config('linepay.channel-id'),
-                'X-LINE-ChannelSecret' => config('linepay.channel-secret'),
+                'X-LINE-ChannelId' => config('line-pay.channel-id'),
+                'X-LINE-ChannelSecret' => config('line-pay.channel-secret'),
                 'Content-Type' => 'application/json; charset=UTF-8',
             ],
             'body' => json_encode($params),
@@ -187,8 +187,8 @@ class LinePay
     {
         $response = $this->client->post(config('line-pay.capture-url') . '/' . $transactionId . '/void', [
             'headers' => [
-                'X-LINE-ChannelId' => config('linepay.channel-id'),
-                'X-LINE-ChannelSecret' => config('linepay.channel-secret'),
+                'X-LINE-ChannelId' => config('line-pay.channel-id'),
+                'X-LINE-ChannelSecret' => config('line-pay.channel-secret'),
                 'Content-Type' => 'application/json; charset=UTF-8',
             ],
             'exceptions' => false,
